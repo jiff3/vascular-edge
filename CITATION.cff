@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it."
+title: "Mapping the Vascular Edge: Longitudinal MRI of White Matter Lesion Expansion"
+type: software
+authors:
+  - name: "Vascular Edge Contributors"
+version: 0.1.0
+date-released: 2026-09-30
+license: MIT
+abstract: >-
+  A reproducible research workflow for structural, perfusion, cerebrovascular
+  reactivity, perilesional, and longitudinal MRI analysis of white-matter
+  hyperintensity expansion.
+keywords:
+  - neuroimaging
+  - white matter hyperintensity
+  - arterial spin labeling
+  - cerebrovascular reactivity
+  - longitudinal MRI
