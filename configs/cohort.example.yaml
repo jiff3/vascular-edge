@@ -1,0 +1,12 @@
+dataset:
+  id: ds004856
+  # Pin this after inspecting a snapshot. Omit to use the OpenNeuro default.
+  version: "1.3.0"
+cohort:
+  target_size: 30
+  max_download_gb: 80
+  random_seed: 2026
+  include_cvr: false
+paths:
+  manifest_stem: results/cohort_manifest
+  bids_root: data/ds004856

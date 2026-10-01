@@ -1,0 +1,55 @@
+paths:
+  bids_root: data/ds004856
+  derivatives_root: derivatives/vascular_edge
+  results_root: results
+runtime:
+  n_jobs: 1
+  float_dtype: float32
+  overwrite: false
+discovery:
+  dataset_id: ds004856
+  include_modalities: [t1w, flair, asl, bold]
+segmentation:
+  backend: fallback
+  # External option: truenet. Install separately; never vendor model weights.
+  truenet_version: "git-4c539165932f7f0607693363731fe5d4e8356590"
+  truenet_source: "https://github.com/v-sundaresan/truenet"
+  model_dir: null
+  executable: truenet
+  lesion_z_threshold: 2.5
+  min_component_mm3: 3.0
+structural:
+  n4_shrink_factor: 2
+  tissue_backend: multi_otsu
+perfusion:
+  motion_correction: true
+  labeling_efficiency: 0.85
+  blood_t1_s: 1.65
+  blood_brain_partition: 0.9
+cvr:
+  motion_correction: true
+  require_explicit_regressor: true
+perilesional:
+  edges_mm: [0, 2, 4, 6, 10]
+  min_lesion_volume_mm3: 3.0
+  min_ring_voxels: 20
+  # Registered maps commonly use exact zero outside their acquired field of view.
+  zero_is_missing: true
+longitudinal:
+  reference_session: earliest
+  pair_strategy: earliest-latest
+  boundary_uncertainty_mm: 1.0
+  min_new_component_mm3: 3.0
+  min_conversion_voxels: 20
+  huge_volume_jump_percent: 200.0
+qc:
+  enabled: true
+analysis:
+  random_seed: 2026
+  bootstrap_repetitions: 2000
+  primary_analyses:
+    - perilesional physiology-distance mixed model
+    - baseline physiology predicting longitudinal WMH change
+  # Composites are never guessed. To enable one, list harmonized source columns
+  # and signs (use -1 only when the documented scale has a reversed direction).
+  cognitive_composites: {}

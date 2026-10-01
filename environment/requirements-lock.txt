@@ -1,0 +1,15 @@
+# Tested lightweight CPU environment. Install after creating Python 3.10+ venv:
+# python -m pip install -r environment/requirements-lock.txt
+nibabel==5.4.2
+SimpleITK==2.5.6
+numpy==2.2.6
+scipy==1.15.3
+pandas==2.3.3
+scikit-image==0.25.2
+matplotlib==3.10.9
+statsmodels==0.14.5
+PyYAML==6.0.3
+openpyxl==3.1.5
+pytest==9.1.1
+pytest-cov==7.1.0
+ruff==0.14.10

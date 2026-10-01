@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vascular-edge"
+version = "0.1.0"
+description = "CPU-first longitudinal MRI analysis of the vascular edge around white matter lesions."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Vascular Edge Contributors"}]
+keywords = ["neuroimaging", "BIDS", "MRI", "WMH", "ASL", "longitudinal"]
+classifiers = ["Programming Language :: Python :: 3", "Programming Language :: Python :: 3.10", "Programming Language :: Python :: 3.11", "Programming Language :: Python :: 3.12"]
+dependencies = [
+  "nibabel>=5.2", "SimpleITK>=2.3", "numpy>=1.26",
+  "scipy>=1.11", "pandas>=2.1", "scikit-image>=0.22", "matplotlib>=3.8",
+  "statsmodels>=0.14", "PyYAML>=6.0",
+  "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=5.0", "ruff>=0.4"]
+parquet = ["pyarrow>=15"]
+
+[project.scripts]
+vascular-edge = "vascular_edge.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vascular_edge"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501", "E701", "E702"]

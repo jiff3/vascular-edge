@@ -1,0 +1,6 @@
+dataset:
+  id: ds004856
+download:
+  # Populate this file with OpenNeuro archive URLs after discovery.
+  # Do not use a full-dataset download on constrained machines.
+  files: []
