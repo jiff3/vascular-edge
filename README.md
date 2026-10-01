@@ -1,5 +1,9 @@
 # Mapping the Vascular Edge: Longitudinal MRI of White Matter Lesion Expansion
 
+[![CI](https://github.com/jiff3/vascular-edge/actions/workflows/ci.yml/badge.svg)](https://github.com/jiff3/vascular-edge/actions/workflows/ci.yml)
+[![Python 3.10–3.12](https://img.shields.io/badge/python-3.10%E2%80%933.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-2a9d8f.svg)](LICENSE)
+
 This project investigates whether cerebrovascular abnormalities extend beyond visible white-matter hyperintensity (WMH) boundaries and whether baseline physiology differs in white matter that later develops lesions. It provides a CPU-first, configuration-driven pipeline for structural MRI, ASL perfusion, hypercapnia BOLD/CVR, perilesional distance analysis, longitudinal conversion, cognition, and cohort statistics.
 
 > The figures below are **synthetic demonstrations, not empirical findings**. No participant imaging is distributed with this repository, and generated conclusions always follow the available estimates—including null or non-estimable results.
