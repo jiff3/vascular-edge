@@ -1,0 +1,44 @@
+paths:
+  bids_root: data/ds004856
+  run_root: results/analysis
+  demo_root: results/demo
+runtime:
+  n_jobs: 1
+  overwrite: false
+cohort:
+  target_size: 30
+  max_download_gb: 80
+  random_seed: 2026
+  include_cvr: true
+structural:
+  n4_shrink_factor: 2
+segmentation:
+  # Transparent testing/sensitivity backend. Configure truenet plus external
+  # versioned weights for research inference; see docs/METHODS.md.
+  backend: fallback
+  lesion_z_threshold: 2.5
+  min_component_mm3: 3.0
+  model_dir: null
+  executable: truenet
+perfusion:
+  motion_correction: true
+cvr:
+  motion_correction: true
+  require_explicit_regressor: true
+perilesional:
+  edges_mm: [0, 2, 4, 6, 10]
+  min_lesion_volume_mm3: 3.0
+  min_ring_voxels: 20
+  zero_is_missing: true
+longitudinal:
+  boundary_uncertainty_mm: 1.0
+  min_new_component_mm3: 3.0
+  min_conversion_voxels: 20
+  huge_volume_jump_percent: 200.0
+analysis:
+  random_seed: 2026
+  bootstrap_repetitions: 1000
+  primary_analyses:
+    - perilesional physiology-distance mixed model
+    - baseline physiology predicting longitudinal WMH change
+  cognitive_composites: {}

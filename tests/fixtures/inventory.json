@@ -1,0 +1,22 @@
+[
+  {
+    "subject": "sub-demo",
+    "demographics_available": true,
+    "cognition_available": true,
+    "sessions": {
+      "ses-wave1": {
+        "session": "ses-wave1",
+        "t1w": true,
+        "flair": true,
+        "asl": true,
+        "bold": true,
+        "bold_cvr": true,
+        "files": [
+          {"path": "sub-demo/ses-wave1/anat/sub-demo_ses-wave1_T1w.nii.gz", "size_bytes": 100, "annexed": true},
+          {"path": "sub-demo/ses-wave1/anat/sub-demo_ses-wave1_FLAIR.nii.gz", "size_bytes": 100, "annexed": true},
+          {"path": "sub-demo/ses-wave1/perf/sub-demo_ses-wave1_asl.nii.gz", "size_bytes": 100, "annexed": true}
+        ]
+      }
+    }
+  }
+]
